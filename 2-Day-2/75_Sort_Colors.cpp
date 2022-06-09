@@ -41,4 +41,39 @@ public:
     }
 };
 
+
+
+optimised solution :) 
+
+
+class Solution
+{
+public:
+    void sortColors(vector<int> &arr)
+    {
+        int start = 0;
+        int end = arr.size() - 1;
+        int mid = 0;
+        while (end >= mid)
+        {
+            if (arr[mid] == 1)
+            {
+                mid++;
+            }
+            else if (arr[mid] == 2)
+            {
+                swap(arr[end], arr[mid]);
+                end--;
+            }
+            else if (arr[mid] == 0)
+            {
+
+                swap(arr[start], arr[mid]);
+                start++, mid++;
+            }
+        }
+    }
+};
+
+
 Find the most optimise solution on ~https: // nutritious-closet-2ba.notion.site/75-Sort-Colors-b47c39189f614e61950387f57e7d71f0
